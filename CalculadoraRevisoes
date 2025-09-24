@@ -1,0 +1,189 @@
+import datetime
+
+data_rev_entrega = input('Informe a data da revisão de entrega: DD/MM/AAAA ')
+data_rev_entrega = datetime.datetime.strptime(data_rev_entrega, "%d/%m/%Y")
+
+data_atual = datetime.datetime.today().date()
+
+revisoes = {
+    'primeira': (data_rev_entrega + datetime.timedelta(days=181)).date(),
+    'segunda': (data_rev_entrega + datetime.timedelta(days=365)).date(),
+    'terceira': (data_rev_entrega + datetime.timedelta(days=547)).date(),
+    'quarta': (data_rev_entrega + datetime.timedelta(days=731)).date(),
+    'quinta': (data_rev_entrega + datetime.timedelta(days=912)).date(),
+    'sexta': (data_rev_entrega + datetime.timedelta(days=1096)).date(),
+    'setima': (data_rev_entrega + datetime.timedelta(days=1218)).date(),
+}
+
+print('''
+  [1]: 1.000 KM OU 6 MESES.
+  [2]: 5.000 KM OU 12 MESES.
+  [3]: 10.000 KM OU 18 MESES.
+  [4]: 15.000 KM OU 24 MESES.
+  [5]: 20.000 KM OU 30 MESES.
+  [6]: 25.000 KM OU 36 MESES.
+  [7]: 30.000 KM OU 40 MESES.
+''')
+
+opcao = int(input('Informe a revisão a ser realizada: '))
+
+# Função para exibir a data no formato DD/MM/AAAA
+def formatar_data(data):
+    return data.strftime("%d/%m/%Y")
+
+if opcao == 1:
+    print(f'\033[1mData vencimento:\033[0m \033[4;34m{formatar_data(revisoes["primeira"])}\033[0m')
+    if revisoes['primeira'] < data_atual:
+        print('\033[4;31m⚠️Revisão fora do prazo⚠️\033[0m\n\033[1mEntre em contato com nossos Consultores River Motos para mais informações.\nWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m')
+    else:
+        dias_restantes = (revisoes['primeira'] - data_atual).days
+        if dias_restantes == 0:
+            print(f'''\033[4;31m!!! Hoje é o ultimo dia para realizar sua revisão !!!\033[0m
+\033[1mEntre em contato com nossos Consultores de Serviços - River Motos\033[0m
+\033[1mWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m
+''')
+        else:
+            print(f'''\033[1;32mRevisão dentro do prazo, Restam\033[0m \033[4m{dias_restantes}\033[0m \033[1;32mdias para realizar\033[0m.
+\033[1m✨ Prezamos pelo seu conforto e segurança 🛡️
+📅 Recomendamos que o agendamento seja feito com antecedência,
+evitando imprevistos ⚠️ e garantindo um horário mais adequado 🕒
+às suas necessidades ✅\033[0m
+\033[1m📞 Para agendar, entre em contato com nossos consultores pelo número:\033[0m \033[4;34m(32) 98461-7137\033[0m
+''')
+
+
+if opcao == 2:
+    print(f'\033[1mData vencimento:\033[0m \033[4;34m{formatar_data(revisoes["segunda"])}\033[0m')
+    if revisoes['segunda'] < data_atual:
+        print(
+            '\033[4;31m⚠️Revisão fora do prazo⚠️\033[0m\n\033[1mEntre em contato com nossos Consultores River Motos para mais informações.\nWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m')
+    else:
+        dias_restantes = (revisoes['segunda'] - data_atual).days
+        if dias_restantes == 0:
+            print(f'''\033[4;31m!!! Hoje é o ultimo dia para realizar sua revisão !!!\033[0m
+    \033[1mEntre em contato com nossos Consultores de Serviços - River Motos\033[0m
+    \033[1mWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m
+    ''')
+        else:
+            print(f'''\033[1;32mRevisão dentro do prazo, Restam\033[0m \033[4m{dias_restantes}\033[0m \033[1;32mdias para realizar\033[0m.
+    \033[1m✨ Prezamos pelo seu conforto e segurança 🛡️
+    📅 Recomendamos que o agendamento seja feito com antecedência,
+    evitando imprevistos ⚠️ e garantindo um horário mais adequado 🕒
+    às suas necessidades ✅\033[0m
+    \033[1m📞 Para agendar, entre em contato com nossos consultores pelo número:\033[0m \033[4;34m(32) 98461-7137\033[0m
+    ''')
+
+
+
+if opcao == 3:
+    print(f'\033[1mData vencimento:\033[0m \033[4;34m{formatar_data(revisoes["terceira"])}\033[0m')
+    if revisoes['terceira'] < data_atual:
+        print(
+            '\033[4;31m⚠️Revisão fora do prazo⚠️\033[0m\n\033[1mEntre em contato com nossos Consultores River Motos para mais informações.\nWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m')
+    else:
+        dias_restantes = (revisoes['terceira'] - data_atual).days
+        if dias_restantes == 0:
+            print(f'''\033[4;31m!!! Hoje é o ultimo dia para realizar sua revisão !!!\033[0m
+    \033[1mEntre em contato com nossos Consultores de Serviços - River Motos\033[0m
+    \033[1mWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m
+    ''')
+        else:
+            print(f'''\033[1;32mRevisão dentro do prazo, Restam\033[0m \033[4m{dias_restantes}\033[0m \033[1;32mdias para realizar\033[0m.
+    \033[1m✨ Prezamos pelo seu conforto e segurança 🛡️
+    📅 Recomendamos que o agendamento seja feito com antecedência,
+    evitando imprevistos ⚠️ e garantindo um horário mais adequado 🕒
+    às suas necessidades ✅\033[0m
+    \033[1m📞 Para agendar, entre em contato com nossos consultores pelo número:\033[0m \033[4;34m(32) 98461-7137\033[0m
+    ''')
+
+
+
+if opcao == 4:
+    print(f'\033[1mData vencimento:\033[0m \033[4;34m{formatar_data(revisoes["quarta"])}\033[0m')
+    if revisoes['quarta'] < data_atual:
+        print(
+            '\033[4;31m⚠️Revisão fora do prazo⚠️\033[0m\n\033[1mEntre em contato com nossos Consultores River Motos para mais informações.\nWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m')
+    else:
+        dias_restantes = (revisoes['quarta'] - data_atual).days
+        if dias_restantes == 0:
+            print(f'''\033[4;31m!!! Hoje é o ultimo dia para realizar sua revisão !!!\033[0m
+    \033[1mEntre em contato com nossos Consultores de Serviços - River Motos\033[0m
+    \033[1mWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m
+    ''')
+        else:
+            print(f'''\033[1;32mRevisão dentro do prazo, Restam\033[0m \033[4m{dias_restantes}\033[0m \033[1;32mdias para realizar\033[0m.
+    \033[1m✨ Prezamos pelo seu conforto e segurança 🛡️
+    📅 Recomendamos que o agendamento seja feito com antecedência,
+    evitando imprevistos ⚠️ e garantindo um horário mais adequado 🕒
+    às suas necessidades ✅\033[0m
+    \033[1m📞 Para agendar, entre em contato com nossos consultores pelo número:\033[0m \033[4;34m(32) 98461-7137\033[0m
+    ''')
+
+
+
+if opcao == 5:
+    print(f'\033[1mData vencimento:\033[0m \033[4;34m{formatar_data(revisoes['quinta'])}\033[0m')
+    if revisoes['quinta'] < data_atual:
+        print(
+            '\033[4;31m⚠️Revisão fora do prazo⚠️\033[0m\n\033[1mEntre em contato com nossos Consultores River Motos para mais informações.\nWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m')
+    else:
+        dias_restantes = (revisoes['quinta'] - data_atual).days
+        if dias_restantes == 0:
+            print(f'''\033[4;31m!!! Hoje é o ultimo dia para realizar sua revisão !!!\033[0m
+    \033[1mEntre em contato com nossos Consultores de Serviços - River Motos\033[0m
+    \033[1mWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m
+    ''')
+        else:
+            print(f'''\033[1;32mRevisão dentro do prazo, Restam\033[0m \033[4m{dias_restantes}\033[0m \033[1;32mdias para realizar\033[0m.
+    \033[1m✨ Prezamos pelo seu conforto e segurança 🛡️
+    📅 Recomendamos que o agendamento seja feito com antecedência,
+    evitando imprevistos ⚠️ e garantindo um horário mais adequado 🕒
+    às suas necessidades ✅\033[0m
+    \033[1m📞 Para agendar, entre em contato com nossos consultores pelo número:\033[0m \033[4;34m(32) 98461-7137\033[0m
+    ''')
+
+
+
+if opcao == 6:
+    print(f'\033[1mData vencimento:\033[0m \033[4;34m{formatar_data(revisoes["sexta"])}\033[0m')
+    if revisoes['sexta'] < data_atual:
+        print(
+            '\033[4;31m⚠️Revisão fora do prazo⚠️\033[0m\n\033[1mEntre em contato com nossos Consultores River Motos para mais informações.\nWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m')
+    else:
+        dias_restantes = (revisoes['sexta'] - data_atual).days
+        if dias_restantes == 0:
+            print(f'''\033[4;31m!!! Hoje é o ultimo dia para realizar sua revisão !!!\033[0m
+    \033[1mEntre em contato com nossos Consultores de Serviços - River Motos\033[0m
+    \033[1mWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m
+    ''')
+        else:
+            print(f'''\033[1;32mRevisão dentro do prazo, Restam\033[0m \033[4m{dias_restantes}\033[0m \033[1;32mdias para realizar\033[0m.
+    \033[1m✨ Prezamos pelo seu conforto e segurança 🛡️
+    📅 Recomendamos que o agendamento seja feito com antecedência,
+    evitando imprevistos ⚠️ e garantindo um horário mais adequado 🕒
+    às suas necessidades ✅\033[0m
+    \033[1m📞 Para agendar, entre em contato com nossos consultores pelo número:\033[0m \033[4;34m(32) 98461-7137\033[0m
+    ''')
+
+
+
+if opcao == 7:
+    print(f'\033[1mData vencimento:\033[0m \033[4;34m{formatar_data(revisoes["setima"])}\033[0m')
+    if revisoes['setima'] < data_atual:
+        print(
+            '\033[4;31m⚠️Revisão fora do prazo⚠️\033[0m\n\033[1mEntre em contato com nossos Consultores River Motos para mais informações.\nWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m')
+    else:
+        dias_restantes = (revisoes['setima'] - data_atual).days
+        if dias_restantes == 0:
+            print(f'''\033[4;31m!!! Hoje é o ultimo dia para realizar sua revisão !!!\033[0m
+    \033[1mEntre em contato com nossos Consultores de Serviços - River Motos\033[0m
+    \033[1mWhatsapp:\033[0m \033[4;34m(32) 98461-7137\033[0m
+    ''')
+        else:
+            print(f'''\033[1;32mRevisão dentro do prazo, Restam\033[0m \033[4m{dias_restantes}\033[0m \033[1;32mdias para realizar\033[0m.
+    \033[1m✨ Prezamos pelo seu conforto e segurança 🛡️
+    📅 Recomendamos que o agendamento seja feito com antecedência,
+    evitando imprevistos ⚠️ e garantindo um horário mais adequado 🕒
+    às suas necessidades ✅\033[0m
+    \033[1m📞 Para agendar, entre em contato com nossos consultores pelo número:\033[0m \033[4;34m(32) 98461-7137\033[0m
+    ''')
