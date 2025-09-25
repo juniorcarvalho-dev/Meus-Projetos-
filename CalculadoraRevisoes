@@ -91,7 +91,7 @@ if opcao == 3:
             print(f'''\033[1;32mRevisão dentro do prazo, Restam\033[0m \033[4m{dias_restantes}\033[0m \033[1;32mdias para realizar\033[0m.
     \033[1m✨ Prezamos pelo seu conforto e segurança 🛡️
     📅 Recomendamos que o agendamento seja feito com antecedência,
-    evitando imprevistos ⚠️ e garantindo um horário mais adequado 🕒
+    evitando imprevistos ⚠️ e garantindo um horário mais adequado �
     às suas necessidades ✅\033[0m
     \033[1m📞 Para agendar, entre em contato com nossos consultores pelo número:\033[0m \033[4;34m(32) 98461-7137\033[0m
     ''')
